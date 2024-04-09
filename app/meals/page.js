@@ -5,6 +5,10 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "All Meal",
+  description: "Delicious meals, shared by our vibrant community.",
+};
 // now we want instead of the whole page waiting for the meal to
 //be fetched only meal section should show the loader while the header
 // is being shown immediately

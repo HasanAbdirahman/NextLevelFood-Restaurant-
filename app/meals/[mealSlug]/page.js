@@ -4,6 +4,21 @@ import classes from "./page.module.css";
 
 import { getMeal } from "@/lib/meals";
 
+// generate metadata in the slug page u have to have genrateMetadata function and
+// as a arguement it takes params same as the component function
+
+export async function generateMetadata({ params }) {
+  const meal = getMeal(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
 // every nextjs component comes with props like eg {params} => like useParams()
 export default function MealDetailPage({ params }) {
   // get the meal and the arguement it needs is the params and the name u gave
