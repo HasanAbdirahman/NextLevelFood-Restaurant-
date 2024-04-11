@@ -2,8 +2,9 @@
 const nextConfig = {
   experimental: {
     outputFileTracingIncludes: {
-      "/": ["./meals.db"],
-      "/meals/juicy-cheese-burger": ["./meals.db"],
+      "/": ["./app/meals"],
+      "/[mealSlug]": ["./app/meal/mealSlug"],
+      "/share": ["./app/share"],
     },
   },
   images: {
